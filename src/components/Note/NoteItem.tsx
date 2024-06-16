@@ -6,7 +6,7 @@ interface Props {
     DelNote: MouseEventHandler;
 }
 
-const NoteItem: React.FC<Props> = ({text, handleChange, DelNote}) => {
+const NoteItem: React.FC<Props> = React.memo(({text, handleChange, DelNote}) => {
     return (
         <div style={{display: 'flex', justifyContent: 'center', gap: '5px', marginBottom: '5px'}}>
                 <input type="text" style={{width: '30%', padding: '3px'}} value={text} onChange={handleChange} />
@@ -19,6 +19,6 @@ const NoteItem: React.FC<Props> = ({text, handleChange, DelNote}) => {
                 </button>
         </div>
     );
-};
+});
 
 export default NoteItem;

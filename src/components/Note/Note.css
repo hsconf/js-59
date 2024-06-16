@@ -1,0 +1,25 @@
+.note {
+    border: 2px solid #ccc;
+    padding: 10px;
+}
+
+.note-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.note-input {
+    width: 50%;
+    padding: 7px;
+}
+
+.note-btn {
+    margin-left: 5px;
+    padding: 5px;
+    line-height: 50%;
+}
+
+.note-list {
+    margin-top: 30px;
+}

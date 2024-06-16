@@ -1,4 +1,4 @@
-import {ChangeEvent, FormEvent, useState} from "react";
+import {ChangeEvent, FormEvent, useState, useEffect} from "react";
 import './Note.css'
 import NoteItem from "./NoteItem";
 import type { Note } from './type';
@@ -41,6 +41,22 @@ const Note = () => {
             return prevState.filter(item => item.id !== id);
         })
     }
+
+
+    useEffect(() => {
+        const data = localStorage.getItem('note');
+        if (data) {
+            const savedMovies = JSON.parse(data).movies;
+            setMovies(savedMovies);
+        }
+    }, []);
+
+    useEffect(() => {
+        if (movies.length !== 0) {
+            localStorage.setItem('note', JSON.stringify({ movies }));
+        }
+    }, [movies]);
+
 
     return (
         <div className="note">
